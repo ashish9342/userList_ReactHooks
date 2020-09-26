@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const Input = (props) => {
-  const [value, setValue] = useState(props.value);
-
-  useEffect(() => {
-    setValue(props.value);
-  }, [props.value]);
-
-  const { name, id, placeholder, onChange } = props;
+  const { name, id, placeholder, onChange, value } = props;
 
   return (
     <input
