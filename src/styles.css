@@ -1,0 +1,40 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body {
+  overflow: hidden;
+}
+.card {
+  /* all: initial; */
+  padding: 10px;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.card:hover {
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.08);
+}
+.card-title {
+  margin-top: 20px;
+}
+.card-id,
+.card-name,
+.card-address {
+  display: flex;
+}
+
+.card-id {
+  margin: 0;
+}
+.inputText {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 5px;
+}
+.scrollHere {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 80vh;
+}
