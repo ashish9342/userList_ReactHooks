@@ -30,6 +30,7 @@ const UserCards = () => {
   };
 
   useEffect(() => {
+    //this work as componentDidMount
     loadData();
   }, []);
 
