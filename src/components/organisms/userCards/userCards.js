@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import CONFIG from "./../../../configs/";
+import UserContext from "./../../../context/user-context";
 
+import CONFIG from "./../../../configs/";
 import Users from "./../../molecules/users/users";
 import Input from "../../atoms/input/input";
 
 const UserCards = () => {
+  console.log(" UserCards inside called");
+
   const [users, setUsers] = useState([]);
   // const [filteredUsers, setFilteredUsers] = useState([]);
 
@@ -19,6 +22,7 @@ const UserCards = () => {
       console.log("Error : ", e.message);
     }
   };
+  // console.log("users", users);
 
   const search = (users) => {
     return users.filter(
@@ -43,7 +47,10 @@ const UserCards = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Users data={search(users)} />
+        <UserContext.Provider value={{ users: search(users) }}>
+          {/* <Users data={search(users)} /> */}
+          <Users />
+        </UserContext.Provider>
       </div>
     </div>
   );
